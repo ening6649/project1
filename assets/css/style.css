@@ -3,6 +3,9 @@
     padding: 0;
     }
 header {
-    background-color: rgb(9, 9, 163);
+    background-image: url("/assets/img/header-bg.jpg");
     text-align: center;
+}
+header h1 {
+    color: #fff;
 }
