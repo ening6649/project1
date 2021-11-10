@@ -16,4 +16,4 @@ fetch (alphaUrl)
     })
 
 
-let aletheiaUrl ="api=BD5ECE0DD71440BA981561509965239B"
+//let aletheiaUrl ="api=BD5ECE0DD71440BA981561509965239B"

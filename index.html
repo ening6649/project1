@@ -5,48 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Compressed CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+<!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
 
-<!-- Compressed JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+<!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css" crossorigin="anonymous">
+
+<!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css" crossorigin="anonymous">
 
         <link rel='stylesheet' href='./assets/css/style.css'/>
     <title>Stockanator</title>
 </head>
 <body>
-        <header>
+        <header class="row">
+            <div class="columns">
             <h1>stock ticker</h1>
+            </div>
         </header>
-        <div>
-            <div class="row">
-                <fieldset class="col-2">
-                    <legend>search:</legend>
-                    <input type="text" placeholder="stock">
-                    <br>
-                    <button>submit</button>
-                    <div>
-                    </div>
-                </fieldset>
-                <fieldset class="col-10">
-                    <div>
-                        <h3 id=mainForcast class="">main</h3>
-                        <br>
-                        <h5</h5>
-                        <br>
-                        <h5</h5>
-                        <br>
-                        <h5</h5>
-                        <br>
-                        <h5</h5>
-                        <br>
-                    </div>
-                    <div>
-                        <h4>user search results</h4>
-                    </div>
+       
+    <div class="row">
+        <div class="columns large-3">
+            <fieldset>
+            <legend>search:</legend>
+            <input type="text" placeholder="stock">
+            <br>
+            <button class="button">submit</button>
+            </fieldset>
+        </div>
+
+        <div class="columns large-9">
+            <fieldset>
+            <div>
+            <h3 id="mainForcast" class="">main</h3>
+            <br>
+            <h5</h5>
+            <br>
+            <h5</h5>
+            <br>
+            <h5</h5>
+            <br>
+            <h5</h5>
+            <br>
+            </div>
+            <div>
+            <h4>user search results</h4>
             </div>
             </fieldset>
-        <script src='./assets/js/script.js'></script>
+        </div>
+    </div>
     <footer>
 
     </footer>
