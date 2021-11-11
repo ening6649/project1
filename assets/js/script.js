@@ -16,7 +16,10 @@
 
 
 // main display
-// let tickerInputEl = document.querySelector('#input')
+let tickerInputEl = document.querySelector('#ticker')
+let formEl = document.querySelector('#search-form')
+
+
 // let CScontainerEl = document.querySelector('#cscontainer')
 
 // let alphaUrl = 'https://www.alphavantage.co/query?function=CONSUMER_SENTIMENT&symbol=spy&interval=15min&apikey=EDF52AZBF2DHJGYX' 
@@ -107,26 +110,38 @@
        
 //     }
 // }
-// 'https://www.alphavantage.co/query?function=OVERVIEW&symbol='+ input +'&apikey=EDF52AZBF2DHJGYX' 
-
-// let alpha3Url = 'https://www.alphavantage.co/query?function=OVERVIEW&symbol=tsla&apikey=EDF52AZBF2DHJGYX' 
-// fetch (alpha3Url)
-//     .then(function(response){
-//         if(response.ok) {
-//             response.json().then(function(data){
-//                 console.log (data);
-//                 submitHandler();
-//             })
-//         }
-// })
 
 
-// let submitHandler = function (event) {
-//     event.preventDefault();
+let getTicker =function(ticker) {
+let alpha3Url = 'https://www.alphavantage.co/query?function=OVERVIEW&symbol='+ ticker +'&apikey=EDF52AZBF2DHJGYX' 
+fetch (alpha3Url)
+    .then(function(response){
+        if(response.ok) {
+            response.json().then(function(data){
+                console.log (data);
+                searchDisplay(data);
+            })
+        }
+})
+}
 
-// }
+let submitHandler = function (event) {
+    event.preventDefault();
+    let ticker = tickerInputEl.value.trim();
+    getTicker(ticker);
+    
+}
 
-// tickerInputEl.addEventListener('submit',submitHandler)
+// display search result 
+let searchDisplay1ContainerEl = document.querySelector('#search-display1')
+let searchDisplay = function (data) {
+    let SD1El = document.createElement('p');
+    searchDisplay1ContainerEl.appendChild(SD1El);
+    SD1El.textContent = data.Description; 
+    
+}
+
+formEl.addEventListener('submit',submitHandler)
 
 
 
