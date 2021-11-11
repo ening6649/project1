@@ -26,15 +26,19 @@ fetch (alphaUrl)
             })
         }
     })
-
+let CStitleEL = document.createElement('h3')
+CScontainerEl.appendChild(CStitleEL)
 let displayCS = function(data) {
     for (let i = 0; i < 12; i++) {
+        
         let CSlistEl = document.createElement('ul');
         let CSdateEl = document.createElement('li');
         let CSreadEL = document.createElement('li');
+        
         CScontainerEl.appendChild(CSlistEl);
         CSlistEl.appendChild(CSdateEl);
         CSlistEl.appendChild(CSreadEL);
+        CStitleEL.textContent = data.name
         CSdateEl.textContent = data.data[i].date;
         CSreadEL.textContent = data.data[i].value
        
@@ -54,6 +58,8 @@ fetch (alpha1Url)
         }
     })
 
+let retailTitleEL = document.createElement('h3')
+retailContainerEl.appendChild(retailTitleEL)
 let displayretail = function(data) {
     for (let i = 0; i < 12; i++) {
         let retailListEl = document.createElement('ul');
@@ -62,6 +68,7 @@ let displayretail = function(data) {
         retailContainerEl.appendChild(retailListEl);
         retailListEl.appendChild(retailDateEl);
         retailListEl.appendChild(retailReadEL);
+        retailTitleEL.textContent = data.name
         retailDateEl.textContent = data.data[i].date;
         retailReadEL.textContent = data.data[i].value
        
@@ -81,6 +88,8 @@ fetch (alpha2Url)
         }
     })
 
+let CPItitleEL = document.createElement('h3')
+CPIcontainerEl.appendChild(CPItitleEL)
 let displayCPI = function(data) {
     for (let i = 0; i < 12; i++) {
         let CPIlistEl = document.createElement('ul');
@@ -89,6 +98,7 @@ let displayCPI = function(data) {
         CPIcontainerEl.appendChild(CPIlistEl);
         CPIlistEl.appendChild(CPIdateEl);
         CPIlistEl.appendChild(CPIreadEL);
+        CPItitleEL.textContent = data.name;
         CPIdateEl.textContent = data.data[i].date;
         CPIreadEL.textContent = data.data[i].value
        
