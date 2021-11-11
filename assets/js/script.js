@@ -3,7 +3,6 @@
 // -H 'accept: application/json' \
 // -H 'X-API-KEY: yorOBlbMm41rqHcFnwYIy3OmmU4E1v9m6IuUqxuE''
 
-// fetch(alpha Vantage api = EDF52AZBF2DHJGYX)
 // FMP 7a878c27bf0e17dc1eea0a749c7d6bc3
 // let alphaUrl = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=spy&interval=15min&apikey=EDF52AZBF2DHJGYX' 
 // fetch (alphaUrl)
@@ -14,6 +13,13 @@
 //             })
 //         }
 //     })
+
+
+// main display
+let tickerInputEl = document.querySelector('#ticker')
+let formEl = document.querySelector('#search-form')
+
+
 let CScontainerEl = document.querySelector('#cscontainer')
 
 let alphaUrl = 'https://www.alphavantage.co/query?function=CONSUMER_SENTIMENT&symbol=spy&interval=15min&apikey=EDF52AZBF2DHJGYX' 
@@ -26,15 +32,19 @@ fetch (alphaUrl)
             })
         }
     })
-
+let CStitleEL = document.createElement('h3')
+CScontainerEl.appendChild(CStitleEL)
 let displayCS = function(data) {
     for (let i = 0; i < 12; i++) {
+        
         let CSlistEl = document.createElement('ul');
         let CSdateEl = document.createElement('li');
         let CSreadEL = document.createElement('li');
+        
         CScontainerEl.appendChild(CSlistEl);
         CSlistEl.appendChild(CSdateEl);
         CSlistEl.appendChild(CSreadEL);
+        CStitleEL.textContent = data.name
         CSdateEl.textContent = data.data[i].date;
         CSreadEL.textContent = data.data[i].value
        
@@ -54,6 +64,8 @@ fetch (alpha1Url)
         }
     })
 
+let retailTitleEL = document.createElement('h3')
+retailContainerEl.appendChild(retailTitleEL)
 let displayretail = function(data) {
     for (let i = 0; i < 12; i++) {
         let retailListEl = document.createElement('ul');
@@ -62,8 +74,9 @@ let displayretail = function(data) {
         retailContainerEl.appendChild(retailListEl);
         retailListEl.appendChild(retailDateEl);
         retailListEl.appendChild(retailReadEL);
+        retailTitleEL.textContent = data.name
         retailDateEl.textContent = data.data[i].date;
-        retailReadEL.textContent = data.data[i].value
+        retailReadEL.textContent = '$' +data.data[i].value + " Million"
        
     }
 }
@@ -81,6 +94,8 @@ fetch (alpha2Url)
         }
     })
 
+let CPItitleEL = document.createElement('h3')
+CPIcontainerEl.appendChild(CPItitleEL)
 let displayCPI = function(data) {
     for (let i = 0; i < 12; i++) {
         let CPIlistEl = document.createElement('ul');
@@ -89,11 +104,51 @@ let displayCPI = function(data) {
         CPIcontainerEl.appendChild(CPIlistEl);
         CPIlistEl.appendChild(CPIdateEl);
         CPIlistEl.appendChild(CPIreadEL);
+        CPItitleEL.textContent = data.name;
         CPIdateEl.textContent = data.data[i].date;
         CPIreadEL.textContent = data.data[i].value
        
     }
 }
+
+
+let getTicker =function(ticker) {
+let alpha3Url = 'https://www.alphavantage.co/query?function=OVERVIEW&symbol='+ ticker +'&apikey=EDF52AZBF2DHJGYX' 
+fetch (alpha3Url)
+    .then(function(response){
+        if(response.ok) {
+            response.json().then(function(data){
+                console.log (data);
+                searchDisplay(data);
+            })
+        }
+})
+}
+
+let submitHandler = function (event) {
+    event.preventDefault();
+    let ticker = tickerInputEl.value.trim();
+    getTicker(ticker);
+    
+}
+
+// display search result 
+let searchDisplay1ContainerEl = document.querySelector('#search-display1')
+let searchDisplay = function (data) {
+    let SD1El = document.createElement('p');
+    searchDisplay1ContainerEl.appendChild(SD1El);
+    SD1El.textContent = data.Description; 
+    
+}
+
+formEl.addEventListener('submit',submitHandler)
+
+
+
+
+
+
+
 
 // let aletheiaUrl ="api=BD5ECE0DD71440BA981561509965239B"
 
