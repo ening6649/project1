@@ -109,24 +109,24 @@
 // }
 // 'https://www.alphavantage.co/query?function=OVERVIEW&symbol='+ input +'&apikey=EDF52AZBF2DHJGYX' 
 
-let alpha3Url = 'https://www.alphavantage.co/query?function=OVERVIEW&symbol=tsla&apikey=EDF52AZBF2DHJGYX' 
-fetch (alpha3Url)
-    .then(function(response){
-        if(response.ok) {
-            response.json().then(function(data){
-                console.log (data);
-                submitHandler();
-            })
-        }
-})
+// let alpha3Url = 'https://www.alphavantage.co/query?function=OVERVIEW&symbol=tsla&apikey=EDF52AZBF2DHJGYX' 
+// fetch (alpha3Url)
+//     .then(function(response){
+//         if(response.ok) {
+//             response.json().then(function(data){
+//                 console.log (data);
+//                 submitHandler();
+//             })
+//         }
+// })
 
 
-let submitHandler = function (event) {
-    event.preventDefault();
+// let submitHandler = function (event) {
+//     event.preventDefault();
 
-}
+// }
 
-tickerInputEl.addEventListener('submit',submitHandler)
+// tickerInputEl.addEventListener('submit',submitHandler)
 
 
 
