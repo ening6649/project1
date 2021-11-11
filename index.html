@@ -15,42 +15,42 @@
     <title>Stockanator</title>
 </head>
 <body>
-        <header>
-            <h1>stock ticker</h1>
-        </header>
-        <div>
-            <div class="row">
-                <fieldset class="col-2">
-                    <legend>search:</legend>
-                    <input type="text" placeholder="stock">
-                    <br>
-                    <button>submit</button>
-                    <div>
-                    </div>
-                </fieldset>
-                <fieldset class="col-10">
-                    <main id="main" >
-                        <h1>Main</h1>
-                        <div id="cscontainer">
+    <header>
+        <h1>stock ticker</h1>
+    </header>
+    <main>
+        <div id="search">
+            <h3 >Search </h3>
+            <form id="search-form" >
+                <label class="form-label" for="ticker"></label>
+                <input name="ticker" id="ticker" type="text" autofocus="true" class="ticker-input" />
+                <button type="submit" class="btn">Search</button>
+            </form>
+        </div>
+        <div id="main-display-container">
+            <h1>Main</h1>
+            <div id="cscontainer">
                        
-                        </div>
-                        <div id="retailcontainer">
-
-                        </div>
-                        <div id="CPIcontainer">
-
-                        </div>
-
-                    </main>
-
-                    <div>
-                        <h4>user search results</h4>
-                    </div>
             </div>
-            </fieldset>
+            <div id="retailcontainer">
+
+            </div>
+            <div id="CPIcontainer">
+
+            </div>      
+        </div>
+        <div id="search-display-container">
+            <div id="search-display1">
+
+            </div>
+            <div id="search-display2">
+
+            </div>
+        </div>
+    </main>
         <script src='./assets/js/script.js'></script>
     <footer>
-
+        <h2></h2>
     </footer>
 </body>
 </html>
