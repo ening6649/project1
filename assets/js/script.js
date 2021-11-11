@@ -70,7 +70,7 @@ let displayretail = function(data) {
         retailListEl.appendChild(retailReadEL);
         retailTitleEL.textContent = data.name
         retailDateEl.textContent = data.data[i].date;
-        retailReadEL.textContent = data.data[i].value
+        retailReadEL.textContent = '$' +data.data[i].value + " Million"
        
     }
 }
