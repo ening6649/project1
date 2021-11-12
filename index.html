@@ -22,21 +22,21 @@
     <header class="row">
         <h1><span class="fas fa-poll"></span>stock ticker</h1>
     </header>
-    <main>
-        <div id="search">
-            <h3 >Search </h3>
+    <main class="row grid-x">
+        <div class="padding-1 small-12 medium-6 large-4" id="search">
+            <h3 class="separator-left text-uppercase">Search </h3>
             <form id="search-form" >
                 <label class="form-label" for="ticker"></label>
                 <input name="ticker" id="ticker" type="text" autofocus="true" class="ticker-input" />
-                <button type="submit" class="btn button">Search</button>
+                <button type="submit" class="btn button rounded bordered shadow">Search</button>
             </form>
             <div id="search-history">
-                
+                <h2>search history</h2>
             </div>
         </div>
         
-        <div id="main-display-container">
-            <h1>Main</h1>
+        <div class="padding-1 small-12 medium-6 large-8 " id="main-display-container">
+            <h1 class="separator-left text-uppercase">Main News</h1>
             <div id="cscontainer">
                        
             </div>
@@ -47,7 +47,8 @@
 
             </div>      
         </div>
-        <div id="search-display-container">
+        <div class="padding-1 small-12  medium-6 large-4"  id="search-display-container">
+            <h2 class="separator-left text-uppercase">search results</h2>
             <div id="search-display1">
 
             </div>
