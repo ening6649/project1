@@ -172,8 +172,12 @@ formEl.addEventListener('submit',submitHandler)
 //     }
 // })
 
+// let options = {
+//     method:"GET",
+//     mode:'no-cors'
+// }
 // let elphaUrl = 'https://dashboard.nbshare.io/api/v1/apps/reddit' 
-// fetch (elphaUrl)
+// fetch (elphaUrl, options)
 //     .then(function(response){
 //         if(response.ok) {
 //             response.json().then(function(data){
