@@ -5,52 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Compressed CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+<!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
 
-<!-- Compressed JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+<!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css" crossorigin="anonymous">
+
+<!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/5c3435c7d8.js" crossorigin="anonymous"></script>
 
         <link rel='stylesheet' href='./assets/css/style.css'/>
     <title>Stockanator</title>
 </head>
 <body>
-        <header>
-            <h1>stock ticker</h1>
-        </header>
-        <div>
-            <div class="row">
-                <fieldset class="col-2">
-                    <legend>search:</legend>
-                    <input type="text" placeholder="stock">
-                    <br>
-                    <button>submit</button>
-                    <div>
-                    </div>
-                </fieldset>
-                <fieldset class="col-10">
-                    <main id="main" >
-                        <h1>Main</h1>
-                        <div id="cscontainer">
-                       
-                        </div>
-                        <div id="retailcontainer">
-
-                        </div>
-                        <div id="CPIcontainer">
-
-                        </div>
-
-                    </main>
-
-                    <div>
-                        <h4>user search results</h4>
-                    </div>
+    <header class="row">
+        <h1><span class="fas fa-poll"></span>stock ticker</h1>
+    </header>
+    <main class="row grid-x">
+        <div class="padding-1 small-12 medium-6 large-4" id="search">
+            <h3 class="separator-left text-uppercase">Search </h3>
+            <form id="search-form" >
+                <label class="form-label" for="ticker"></label>
+                <input name="ticker" id="ticker" type="text" autofocus="true" class="ticker-input" />
+                <button type="submit" class="btn button rounded bordered shadow">Search</button>
+            </form>
+            <div id="search-history">
+                <h2>search history</h2>
             </div>
-            </fieldset>
+        </div>
+        
+        <div class="padding-1 small-12 medium-6 large-8 " id="main-display-container">
+            <h1 class="separator-left text-uppercase">Main News</h1>
+            <div id="cscontainer">
+                       
+            </div>
+            <div id="retailcontainer">
+
+            </div>
+            <div id="CPIcontainer">
+
+            </div>      
+        </div>
+        <div class="padding-1 small-12  medium-6 large-4"  id="search-display-container">
+            <h2 class="separator-left text-uppercase">search results</h2>
+            <div id="search-display1">
+
+            </div>
+            <div id="search-display2">
+
+            </div>
+        </div>
+    </main>
         <script src='./assets/js/script.js'></script>
     <footer>
-
+        <div>
+            <div> 
+                &copy;2021 YONDL All rights reserved.
+            </div>
+            <div>
+                <a href="./privacy-policy.html" target="_blank">Privacy Policy</a>
+            </div>
+            <div>
+                <h3>Find the next ship to the moon?</h3>
+                <a href="https://robinhood.com/us/en/" target="_blank">Robinhood</a>
+                <a href="https://www.tdameritrade.com/" target="_blank">TD Ameritrade</a>
+                <a href="https://safemoon.net/" target="_blank">SafeMoon</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
