@@ -11,6 +11,12 @@
 #search-history {
     background-color: rgb(70, 212, 94);
 }
+#search-display1 {
+    background-color: turquoise;
+}
+#search-display2 {
+    background-color: violet;
+}
 * {
     margin: 0;
     padding: 0;
