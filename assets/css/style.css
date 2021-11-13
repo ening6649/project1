@@ -33,6 +33,29 @@ header h1 {
 }
 
 
+/* footer css section */
+
+footer {
+    background-image: url("./assets/img/footer-bg.jpg");
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+footer li {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+
+.copyright {
+ order: 2;
+}
+.moon {
+    padding-top: 5px;
+}
+
 @media only screen and (max-width: 375px) {
     #search {
         order: 1;
@@ -48,3 +71,4 @@ header h1 {
 
 
   }
+
