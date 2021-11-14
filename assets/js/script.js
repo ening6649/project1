@@ -241,16 +241,7 @@ let saveSearch = function(ticker) {
     localStorage.setItem('history', JSON.stringify(savedTickerArr));
 }
 
-let displaySaved = function () {
-    searchHistoryEl.innerHTML='';
-    for (let i = 0; i < savedTickerArr.length; i++) {
-        let savedTickerEl = document.createElement('p');
-        searchHistoryEl.appendChild(savedTickerEl)
-        savedTickerEl.textContent= savedTickerArr[i];
-        
-      console.log(' fired')
-    }
-}
+
 
 let loadsaved = function() {
     let savedTicker = JSON.parse(localStorage.getItem('history'))
@@ -260,6 +251,23 @@ let loadsaved = function() {
     }  
     savedTickerArr = savedTicker;
 }
+loadsaved();
+
+
+let displaySaved = function () {
+    searchHistoryEl.innerHTML='';
+    for (let i = 0; i < savedTickerArr.length; i++) {
+        let savedTickerEl = document.createElement('p');
+        searchHistoryEl.appendChild(savedTickerEl)
+        savedTickerEl.textContent= savedTickerArr[i];
+        
+      
+    }
+}
+
+displaySaved();
+
+
 
 let submitHandler = function (event) {
     event.preventDefault();
@@ -273,6 +281,7 @@ let submitHandler = function (event) {
 let getTicker =function(ticker) {
 let alpha3Url = 'https://www.alphavantage.co/query?function=OVERVIEW&symbol='+ ticker +'&apikey=EDF52AZBF2DHJGYX' 
 // let alpha4Url = 'https://www.alphavantage.co/query?function=EARNINGS_CALENDAR&'+ ticker +'=3month&apikey=EDF52AZBF2DHJGYX' 
+// let alpha5Url= 'https://www.alphavantage.co/query?function=EARNINGS&symbol='+ ticker+ '&apikey=EDF52AZBF2DHJGYX'
 fetch (alpha3Url)
     .then(function(response){
         if(response.ok) {
