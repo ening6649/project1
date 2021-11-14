@@ -241,16 +241,7 @@ let saveSearch = function(ticker) {
     localStorage.setItem('history', JSON.stringify(savedTickerArr));
 }
 
-let displaySaved = function () {
-    searchHistoryEl.innerHTML='';
-    for (let i = 0; i < savedTickerArr.length; i++) {
-        let savedTickerEl = document.createElement('p');
-        searchHistoryEl.appendChild(savedTickerEl)
-        savedTickerEl.textContent= savedTickerArr[i];
-        
-      console.log(' fired')
-    }
-}
+
 
 let loadsaved = function() {
     let savedTicker = JSON.parse(localStorage.getItem('history'))
@@ -260,6 +251,22 @@ let loadsaved = function() {
     }  
     savedTickerArr = savedTicker;
 }
+loadsaved();
+
+
+let displaySaved = function () {
+    searchHistoryEl.innerHTML='';
+    for (let i = 0; i < savedTickerArr.length; i++) {
+        let savedTickerEl = document.createElement('p');
+        searchHistoryEl.appendChild(savedTickerEl)
+        savedTickerEl.textContent= savedTickerArr[i]; 
+    }
+
+}
+
+displaySaved();
+
+
 
 let submitHandler = function (event) {
     event.preventDefault();
@@ -273,6 +280,7 @@ let submitHandler = function (event) {
 let getTicker =function(ticker) {
 let alpha3Url = 'https://www.alphavantage.co/query?function=OVERVIEW&symbol='+ ticker +'&apikey=EDF52AZBF2DHJGYX' 
 // let alpha4Url = 'https://www.alphavantage.co/query?function=EARNINGS_CALENDAR&'+ ticker +'=3month&apikey=EDF52AZBF2DHJGYX' 
+let alpha5Url= 'https://www.alphavantage.co/query?function=EARNINGS&symbol='+ ticker+ '&apikey=EDF52AZBF2DHJGYX'
 fetch (alpha3Url)
     .then(function(response){
         if(response.ok) {
@@ -284,16 +292,30 @@ fetch (alpha3Url)
 })
 }
 
+
+
 // display search result 
 
 let searchDisplay1ContainerEl = document.querySelector('#search-display1')
 let searchDisplay = function (data) {
     searchDisplay1ContainerEl.innerHTML="";
     var SD1El = document.createElement('p');
+    let SD1Ul = document.createElement('ul');
+    let SD1Li1 = document.createElement ('li');
+    let SD2Li2 = document.createElement ('li');
+    let SD3Li3 = document.createElement('li');
     searchDisplay1ContainerEl.appendChild(SD1El);
-
+    searchDisplay1ContainerEl.appendChild(SD1Ul);
+    SD1Ul.appendChild(SD1Li1);
+    SD1Ul.appendChild(SD2Li2);
+    SD1Ul.appendChild(SD3Li3);
     SD1El.textContent = data.Description; 
-    
+    SD1Li1.textContent = 'Beta: ' +data.Beta + " /Beta is a measure of a stock's volatility in relation to the overall market. i.e. the S&P 500 Index, has a beta of 1.0 "
+    SD2Li2.textContent ='Forward PE: ' +data.ForwardPE + ' /earnings per share expected to be generated per share over the next 12 months'
+    SD3Li3.textContent = 'Trailing Price to Sales: '+ data.PriceToSalesRatioTTM + " /stock price per share the underlying company's sales. i.e. a high number impliles a high stock price"
+
 }
+// searchDisplay(savedTickerArr[0]);
+
 
 formEl.addEventListener('submit',submitHandler)
