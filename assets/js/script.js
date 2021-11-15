@@ -93,9 +93,81 @@
 // }
 
 
+// chart start
+
+const csData = [
+    { id: 'd1', date: '2021-09-01', value: 72.8 },
+    { id: 'd2', date: '2021-08-01', value: 70.3 },
+    { id: 'd3', date: '2021-07-01', value: 81.2 },
+    { id: 'd4', date: '2021-06-01', value: 85.5 },
+    { id: 'd5', date: '2021-05-01', value: 82.9 },
+    { id: "d6", date: '2021-04-01', value: 88.3},
+    { id: "d7", date: '2021-03-01', value: 84.9},
+    { id: "d8", date: '2021-02-01', value: 76.8},
+    { id: "d9", date: '2021-01-01', value: 79},
+    { id: "d10", date: '2020-12-01', value: 80.7},
+    { id: "d11", date: '2020-11-01', value: 76.9},
+    { id: "d12", date: '2020-010-01', value: 81.8},
+  ];
+  
+  // margins for bottom label
+  const margins = {top: 20, bottom: 10};
+  const chartWidth = 600;
+  const chartHeight = 500 - margins.top - margins.bottom;
+  
+  const x = d3.scaleBand().rangeRound([0, chartWidth]).padding(0.1);
+  const y = d3.scaleLinear().range([chartHeight, 0]);
+  
+  const chartContainer = d3
+    .select('svg')
+    .attr('width', chartWidth)
+    .attr('height', chartHeight + margins.top + margins.bottom);
+  
+  x.domain(csData.map((d) => d.date));
+  // d3.max built in feature that looks at all my data values and uses the highest value as the upperbound        
+  y.domain([0, d3.max(csData, d => d.value) + 10])
+  
+  // 'g' creates a group in the svg element
+  const chart = chartContainer.append('g');
+  // axis bottom puts the date labels below the axis not on the bottom of the screen
+  chart
+  .append('g')
+  // tick size outer removes tick on edge of labels
+  .call(d3.axisBottom(x).tickSizeOuter(0))
+  .attr('transform', `translate(0, ${chartHeight})`)
+  .attr('color', '#000');
+  
+  chart
+    .selectAll('.bar')
+    .data(csData)
+    .enter()
+    // 'rect' created a rectangle in the svg element
+    .append('rect')
+    .classed('bar', true)
+    // bandwidth takes account of how many bars we have and makes them fit into the graph taking acount of the padding
+    .attr('width', x.bandwidth())
+    // this caculates the position along the y axis for this element
+    .attr('height', (data) => chartHeight - y(data.value))
+    .attr('x', (data) => x(data.date))
+    .attr('y', (data) => y(data.value));
+  
+  chart
+  .selectAll('.label')
+  .data(csData)
+  .enter()
+  .append('text')
+  .text(data => data.value)
+  // positioning the value
+  .attr('x', data => x(data.date) + x.bandwidth() / 2)
+  .attr('y', data => y(data.value) - 20)
+  // this centers value text in the middle
+  .attr('text-anchor', 'middle')
+  .classed('label', true);
+  
+  // chart end
 
 
-
+  
 
 
 // // main display
@@ -345,6 +417,10 @@ let searchDisplay = function (data) {
     SD3Li3.textContent = 'Trailing Price to Sales: '+ data.PriceToSalesRatioTTM + " /stock price per share the underlying company's sales. i.e. a high number impliles a high stock price"
 
 }
+
+
+
+
 // searchDisplay(savedTickerArr[0]);
 
 
