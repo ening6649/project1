@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
+    <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css"
+        crossorigin="anonymous">
 
-<!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css" crossorigin="anonymous">
+    <!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css"
+        crossorigin="anonymous">
 
-<!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css" crossorigin="anonymous">
-<script src="https://kit.fontawesome.com/5c3435c7d8.js" crossorigin="anonymous"></script>
+    <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css"
+        crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5c3435c7d8.js" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Stockanator</title>
 </head>
+
 <body>
     <header class="row">
         <h1><span class="fas fa-poll"></span>stock ticker</h1>
@@ -25,7 +31,7 @@
     <main class="row grid-x">
         <div class="padding-1 small-12 medium-6 large-4" id="search">
             <h3 class="separator-left text-uppercase">Search </h3>
-            <form id="search-form" >
+            <form id="search-form">
                 <label class="form-label" for="ticker"></label>
                 <input name="ticker" id="ticker" type="text" autofocus="true" class="ticker-input" />
                 <button type="submit" class="btn button rounded bordered shadow">Search</button>
@@ -34,49 +40,65 @@
                 <h2>search history</h2>
             </div>
         </div>
-        
+
         <div class="padding-1 small-12 medium-6 large-8 " id="main-display-container">
             <h1 class="separator-left text-uppercase">Main News</h1>
             <div id="cscontainer">
-                       
+
             </div>
             <div id="retailcontainer">
 
             </div>
             <div id="CPIcontainer">
 
-            </div>      
+            </div>
         </div>
-        <div class="padding-1 small-12 medium-12 large-12 "  id="search-display-container">
+        <div class="padding-1 small-12 medium-12 large-12 " id="search-display-container">
             <h2 class="separator-left text-uppercase">search results</h2>
+            <div class="app">
+                <div class="chart">
+                    <h3>Consumer Sentiment & Consumer Confidence</h3>
+                    <svg></svg>
+                </div>
+                <div id="data">
+                    <ul></ul>
+                </div>
+            </div>
             <div class="" id="search-display1">
             </div>
             <div class="" id="search-display2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo illo velit vitae quibusdam debitis, officia eveniet sed id, quam minima dolores aliquam delectus quia enim vero sequi fugiat! Corporis, quo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo illo velit vitae quibusdam
+                    debitis, officia eveniet sed id, quam minima dolores aliquam delectus quia enim vero sequi fugiat!
+                    Corporis, quo.</p>
 
-            <div id="search-display2">
-                
+                <div id="search-display2">
+                </div>
+            </div>
+    </main>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-axis/1.0.10/d3-axis.min.js"
+        integrity="sha512-pylmc7v6Ls9kxrLM47Dl9jJRksHCDEARrlTTcbT9VZsGDVzEoiE9MFaFx8F8Xgc/58WQI8ywi+YGpYqfEmHhfA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src='./assets/js/script.js'></script>
+
+    <footer>
+        <div>
+
+            <div class="moon">
+                <h5>Find the next ship to the moon?</h5>
+                <ul class="no-bullet">
+                    <li class=""><a href="https://robinhood.com/us/en/" target="_blank">Robinhood</a></li>
+                    <li class=""><a href="https://www.tdameritrade.com/" target="_blank">TD Ameritrade</a></li>
+                    <li class=""><a href="https://safemoon.net/" target="_blank">SafeMoon</a></li>
+                </ul>
+            </div>
+            <div class="">
+                <p>&copy;2021 YONDL All rights reserved.</p>
             </div>
         </div>
-    </main>
-        <script src='./assets/js/script.js'></script>
-
-        <footer>
-            <div>
- 
-                <div class="moon"> 
-                    <h5>Find the next ship to the moon?</h5>
-                    <ul class="no-bullet">
-                        <li class=""><a href="https://robinhood.com/us/en/" target="_blank">Robinhood</a></li>
-                        <li class=""><a href="https://www.tdameritrade.com/" target="_blank">TD Ameritrade</a></li>
-                        <li class=""><a href="https://safemoon.net/" target="_blank">SafeMoon</a></li>
-                    </ul>
-                </div> 
-                <div class=""> 
-                    <p>&copy;2021 YONDL All rights reserved.</p>
-                </div> 
-            </div>
-        </footer>
+    </footer>
 
 </body>
+
 </html>
