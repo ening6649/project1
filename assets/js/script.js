@@ -118,16 +118,28 @@ let CPItitleEL = document.createElement('h3')
 CPIcontainerEl.appendChild(CPItitleEL)
 let displayCPI = function(data) {
     for (let i = 0; i < 10; i++) {
+        let cardDiv1El = document.createElement('div');
+        let cardDiv2El = document.createElement('div')
+        let cardDiv3El = document.createElement('div')
         let CPIlistEl = document.createElement('ul');
         let gainerNameEl = document.createElement('li');
         let gainerTickerEL = document.createElement('li');
         let gainerPriceEl = document.createElement('li')
         let gainerChangeEl = document.createElement('li')
-        CPIcontainerEl.appendChild(CPIlistEl);
+
+        
+        CPIcontainerEl.appendChild(cardDiv1El);
+        cardDiv1El.appendChild(cardDiv2El);
+        cardDiv2El.appendChild(cardDiv3El)
+        cardDiv3El.appendChild(CPIlistEl);
         CPIlistEl.appendChild(gainerNameEl);
         CPIlistEl.appendChild(gainerTickerEL);
         CPIlistEl.appendChild(gainerPriceEl);
         CPIlistEl.appendChild(gainerChangeEl)
+        CPIlistEl.className='no-bullet'
+        cardDiv1El.className='column column-block'
+        cardDiv2El.className='card'
+        cardDiv3El.className='card-section'
         CPItitleEL.textContent = 'Top Gainers';
         gainerNameEl.textContent = data[i].companyName
         gainerTickerEL.textContent=data[i].ticker
@@ -162,18 +174,27 @@ let CStitleEL = document.createElement('h3')
 CScontainerEl.appendChild(CStitleEL)
 let displayCS = function(data) {
     for (let i = 0; i < 10; i++) {
-        
+        let cardDiv1El = document.createElement('div');
+        let cardDiv2El = document.createElement('div')
+        let cardDiv3El = document.createElement('div')
         let CSlistEl = document.createElement('ul');
         let activeNameEl = document.createElement('li');
         let activeTickerEL = document.createElement('li');
         let activePriceEl = document.createElement('li')
         let activeChangeEl = document.createElement('li')
         
-        CScontainerEl.appendChild(CSlistEl);
+        CScontainerEl.appendChild(cardDiv1El);
+        cardDiv1El.appendChild(cardDiv2El);
+        cardDiv2El.appendChild(cardDiv3El);
+        cardDiv3El.appendChild(CSlistEl);
         CSlistEl.appendChild(activeNameEl);
         CSlistEl.appendChild(activeTickerEL);
         CSlistEl.appendChild(activePriceEl)
         CSlistEl.appendChild(activeChangeEl);
+        CSlistEl.className='no-bullet'
+        cardDiv1El.className='column column-block'
+        cardDiv2El.className='card'
+        cardDiv3El.className='card-section'
         CStitleEL.textContent = 'Top active '
         activeNameEl.textContent = data[i].companyName;
         activeTickerEL.textContent = data[i].ticker;
@@ -210,12 +231,22 @@ let retailTitleEL = document.createElement('h3')
 retailContainerEl.appendChild(retailTitleEL)
 let displayretail = function(data) {
     for (let i = 0; i < 10; i++) {
+        let cardDiv1El = document.createElement('div');
+        let cardDiv2El = document.createElement('div')
+        let cardDiv3El = document.createElement('div')
         let retailListEl = document.createElement('ul');
         let sectorNameEl = document.createElement('li');
         let sectorChangeEL = document.createElement('li');
-        retailContainerEl.appendChild(retailListEl);
+        retailContainerEl.appendChild(cardDiv1El);
+        cardDiv1El.appendChild(cardDiv2El);
+        cardDiv2El.appendChild(cardDiv3El)
+        cardDiv3El.appendChild(retailListEl);
         retailListEl.appendChild(sectorNameEl);
         retailListEl.appendChild(sectorChangeEL);
+        retailListEl.className='no-bullet'
+        cardDiv1El.className='column column-block'
+        cardDiv2El.className='card'
+        cardDiv3El.className='card-section'
         retailTitleEL.textContent = 'Sector Performance'
         sectorNameEl.textContent = data.sectorPerformance[i].sector
         sectorChangeEL.textContent = data.sectorPerformance[i].changesPercentage
@@ -279,8 +310,7 @@ let submitHandler = function (event) {
 
 let getTicker =function(ticker) {
 let alpha3Url = 'https://www.alphavantage.co/query?function=OVERVIEW&symbol='+ ticker +'&apikey=EDF52AZBF2DHJGYX' 
-// let alpha4Url = 'https://www.alphavantage.co/query?function=EARNINGS_CALENDAR&'+ ticker +'=3month&apikey=EDF52AZBF2DHJGYX' 
-let alpha5Url= 'https://www.alphavantage.co/query?function=EARNINGS&symbol='+ ticker+ '&apikey=EDF52AZBF2DHJGYX'
+
 fetch (alpha3Url)
     .then(function(response){
         if(response.ok) {
