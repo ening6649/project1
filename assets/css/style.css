@@ -1,16 +1,5 @@
-#search {
-    background-color: tomato;
-}
-#main-display-container {
-    background-color: teal;
-}
 
-#search-display-container {
-    background-color: yellow;
-}
-#search-history {
-    background-color: rgb(70, 212, 94);
-}
+
 #search-display1 {
     background-color: turquoise;
 }
@@ -31,7 +20,12 @@ header {
 header h1 {
     color: #fff;
 }
-
+/* search history */
+.save-search {
+  background-color: lightgrey;
+  text-align: center;
+  border-radius: 6px;
+}
 /* chart css */
 #app {
     display: flex;
@@ -89,16 +83,11 @@ footer {
 
 footer li {
     display: inline-block;
-    padding-right: 10px;
+
 }
 
 
-.copyright {
- order: 2;
-}
-.moon {
-    padding-top: 5px;
-}
+
 
 @media only screen and (max-width: 375px) {
     #search {
@@ -116,3 +105,11 @@ footer li {
 
   }
 
+  /* overrid arrow color */
+.arrow-down {
+  border-color: #ff0000 transparent transparent;
+}
+
+.arrow-up {
+  border-color: transparent transparent #3ce608
+}  

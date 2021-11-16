@@ -209,9 +209,9 @@ let displayCPI = function(data) {
         CPIlistEl.appendChild(gainerPriceEl);
         CPIlistEl.appendChild(gainerChangeEl)
         CPIlistEl.className='no-bullet'
-        cardDiv1El.className='column column-block'
+        cardDiv1El.className='column column-block '
         cardDiv2El.className='card'
-        cardDiv3El.className='card-section'
+        cardDiv3El.className='card-section callout secondary'
         CPItitleEL.textContent = 'Top Gainers';
         gainerNameEl.textContent = data[i].companyName
         gainerTickerEL.textContent=data[i].ticker
@@ -264,9 +264,9 @@ let displayCS = function(data) {
         CSlistEl.appendChild(activePriceEl)
         CSlistEl.appendChild(activeChangeEl);
         CSlistEl.className='no-bullet'
-        cardDiv1El.className='column column-block'
+        cardDiv1El.className='column column-block '
         cardDiv2El.className='card'
-        cardDiv3El.className='card-section'
+        cardDiv3El.className='card-section callout secondary'
         CStitleEL.textContent = 'Top active '
         activeNameEl.textContent = data[i].companyName;
         activeTickerEL.textContent = data[i].ticker;
@@ -316,9 +316,9 @@ let displayretail = function(data) {
         retailListEl.appendChild(sectorNameEl);
         retailListEl.appendChild(sectorChangeEL);
         retailListEl.className='no-bullet'
-        cardDiv1El.className='column column-block'
+        cardDiv1El.className='column column-block '
         cardDiv2El.className='card'
-        cardDiv3El.className='card-section'
+        cardDiv3El.className='card-section callout secondary'
         retailTitleEL.textContent = 'Sector Performance'
         sectorNameEl.textContent = data.sectorPerformance[i].sector
         sectorChangeEL.textContent = data.sectorPerformance[i].changesPercentage
@@ -362,6 +362,7 @@ let displaySaved = function () {
     for (let i = 0; i < savedTickerArr.length; i++) {
         let savedTickerEl = document.createElement('p');
         searchHistoryEl.appendChild(savedTickerEl)
+        savedTickerEl.className = 'save-search'
         savedTickerEl.textContent= savedTickerArr[i]; 
     }
 
@@ -411,6 +412,7 @@ let searchDisplay = function (data) {
     SD1Ul.appendChild(SD1Li1);
     SD1Ul.appendChild(SD2Li2);
     SD1Ul.appendChild(SD3Li3);
+    SD1Ul.className = 'no-bullet'
     SD1El.textContent = data.Description; 
     SD1Li1.textContent = 'Beta: ' +data.Beta + " /Beta is a measure of a stock's volatility in relation to the overall market. i.e. the S&P 500 Index, has a beta of 1.0 "
     SD2Li2.textContent ='Forward PE: ' +data.ForwardPE + ' /earnings per share expected to be generated per share over the next 12 months'
