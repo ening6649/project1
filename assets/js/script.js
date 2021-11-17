@@ -124,26 +124,26 @@ fetch (alphaUrl)
                 console.log (data);   
 
 const csData = [
-    { id: 'd0', date: data.data[0].date, value: data.data[0].value},
-    { id: 'd1', date: data.data[1].date, value: data.data[1].value},
-    { id: 'd2', date: data.data[2].date, value: data.data[2].value},
-    { id: 'd3', date: data.data[3].date, value: data.data[3].value},
-    { id: 'd4', date: data.data[4].date, value: data.data[4].value},
-    { id: "d5", date: data.data[5].date, value: data.data[5].value},
-    { id: "d6", date: data.data[6].date, value: data.data[6].value},
-    { id: "d7", date: data.data[7].date, value: data.data[7].value},
-    { id: "d8", date: data.data[8].date, value: data.data[8].value},    
-    { id: "d9", date: data.data[9].date, value: data.data[9].value},
-    { id: "d10", date: data.data[10].date, value: data.data[10].value},
-    { id: "d11", date: data.data[11].date, value: data.data[11].value},
+    { id: 'd0', date: data.data[0].date.substr(5, 2), value: data.data[0].value},
+    { id: 'd1', date: data.data[1].date.substr(5, 2), value: data.data[1].value},
+    { id: 'd2', date: data.data[2].date.substr(5, 2), value: data.data[2].value},
+    { id: 'd3', date: data.data[3].date.substr(5, 2), value: data.data[3].value},
+    { id: 'd4', date: data.data[4].date.substr(5, 2), value: data.data[4].value},
+    { id: "d5", date: data.data[5].date.substr(5, 2), value: data.data[5].value},
+    { id: "d6", date: data.data[6].date.substr(5, 2), value: data.data[6].value},
+    { id: "d7", date: data.data[7].date.substr(5, 2), value: data.data[7].value},
+    { id: "d8", date: data.data[8].date.substr(5, 2), value: data.data[8].value},    
+    { id: "d9", date: data.data[9].date.substr(5, 2), value: data.data[9].value},
+    { id: "d10", date: data.data[10].date.substr(5, 2), value: data.data[10].value},
+    { id: "d11", date: data.data[11].date.substr(5, 2), value: data.data[11].value},
   ];
   
   
   
   // margins for bottom label
   const margins = {top: 20, bottom: 10};
-  const chartWidth = 900;
-  const chartHeight = 500 - margins.top - margins.bottom;
+  const chartWidth = 800;
+  const chartHeight = 600 - margins.top - margins.bottom;
   
 
   const x = d3.scaleBand().rangeRound([0, chartWidth]).padding(0.1);
@@ -151,8 +151,8 @@ const csData = [
   
   
   const chartContainer = d3
-    .select('svg')
-    // .append('svg')
+    .select('.chart')
+    .append('svg')
     .attr('width', chartWidth)
     .attr('height', chartHeight + margins.top + margins.bottom)
     // .call(responsivefy);
@@ -173,7 +173,8 @@ const csData = [
   // tick size outer removes tick on edge of labels
   .call(d3.axisBottom(x).tickSizeOuter(0))
   .attr('transform', `translate(0, ${chartHeight})`)
-  .attr('color', '#000');
+  .attr('color', '#000')
+  .style("font", "15px times");
   
   chart
     .selectAll('.bar')
