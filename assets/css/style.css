@@ -14,7 +14,7 @@
 header {
     background-color: #000;
     text-align: center;
-    /* background-image: url("./assets/img/footer-bg.jpg"); */
+    background-image: url("../img/header-bg.jpg");
 }
 
 header h1 {
@@ -61,7 +61,7 @@ header h1 {
 /* footer css section */
 
 footer {
-    background-image: url("./assets/img/footer-bg.jpg");
+    background-image: url("../img/footer-bg.jpg");
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
