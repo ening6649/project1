@@ -1,5 +1,7 @@
 
+ .axis { font: 100px sans-serif; }
 
+ 
 #search-display1 {
     background-color: turquoise;
 }
@@ -42,8 +44,9 @@ header h1 {
   }
   .chart,
   .data {
-    margin: 0 2rem;
+    margin: 0  0 0 -1rem;
   }
+ 
 
   .bar {
     fill: #000;
