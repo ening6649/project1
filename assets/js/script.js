@@ -92,6 +92,27 @@
 //     }
 // }
 
+// function responsivefy(svg) {
+    
+//     var container = d3.select(svg.node().parentNode),
+//         width = parseInt(svg.style("width")),
+//         height = parseInt(svg.style("height")),
+//         aspect = width / height;
+
+    
+//     svg.attr("viewBox", "0 0 " + width + " " + height)
+//         .attr("perserveAspectRatio", "xMinYMid")
+//         .call(resize);
+
+//     d3.select(window).on("resize." + container.attr("id"), resize);
+
+   
+//     function resize() {
+//         var targetWidth = parseInt(container.style("width"));
+//         svg.attr("width", targetWidth);
+//         svg.attr("height", Math.round(targetWidth / aspect));
+//     }
+// }
 
 // chart start
 
@@ -115,8 +136,9 @@ const csData = [
     { id: "d9", date: data.data[9].date, value: data.data[9].value},
     { id: "d10", date: data.data[10].date, value: data.data[10].value},
     { id: "d11", date: data.data[11].date, value: data.data[11].value},
-    // { id: "d12", value: 90},
   ];
+  
+  
   
   // margins for bottom label
   const margins = {top: 20, bottom: 10};
@@ -127,15 +149,21 @@ const csData = [
   const x = d3.scaleBand().rangeRound([0, chartWidth]).padding(0.1);
   const y = d3.scaleLinear().range([chartHeight, 0]);
   
+  
   const chartContainer = d3
     .select('svg')
+    // .append('svg')
     .attr('width', chartWidth)
-    .attr('height', chartHeight + margins.top + margins.bottom);
+    .attr('height', chartHeight + margins.top + margins.bottom)
+    // .call(responsivefy);
+    
   
+
   x.domain(csData.map((d) => d.date));
   // d3.max built in feature that looks at all my data values and uses the highest value as the upperbound        
 //   y.domain([0, d3.max(csData, d => d.value) + 10])
   y.domain([0, 120])
+  
   
   // 'g' creates a group in the svg element
   const chart = chartContainer.append('g');
@@ -160,6 +188,7 @@ const csData = [
     .attr('height', (data) => chartHeight - y(data.value))
     .attr('x', (data) => x(data.date))
     .attr('y', (data) => y(data.value));
+    
   
   chart
   .selectAll('.label')
