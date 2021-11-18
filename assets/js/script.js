@@ -376,6 +376,25 @@ $(function(){
     $("#search-history").find("p").filter(":odd").css({"background-color":"black","color":"white"});
 });
 
+// img slider 
+// $(function() {
+//     var galleryImage = $(".gallery").find("img").first();
+//     var image = [
+//         "assets/img/slide1.jpg",
+//         "assets/img/slide2.jpg",
+//         "assets/img/slide3.jpg",
+//     ];
+//     var i =0;
+//     setInterval(function(){
+//         i = (i+1) % image.length;
+//         galleryImage.fadeOut(function(){
+//             $(this).arrr("src" , image[i]);
+//             $(this).fadeIn();
+//         }, 2000);
+
+//     });
+// });
+
 
 
 // searchDisplay(savedTickerArr[0]);
