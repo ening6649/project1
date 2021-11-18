@@ -21,13 +21,14 @@
 - Foundation Framework
 - Yahoo! Finance API
 - Alpha Vantage API
-- C3.js
+- D3.js
+- Moment.js
+- jQuery
 
 
 ## Screen Shot:
 
-
-![image](https://user-images.githubusercontent.com/90431294/142093087-e764c3ff-b1c9-4165-b66b-fb2bad2e4f78.png)
+![image](https://user-images.githubusercontent.com/90431294/142514973-f421198f-3527-4ffc-a890-fbf75020b61e.png)
 
 ## Link to site:
 
