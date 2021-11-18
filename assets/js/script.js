@@ -23,18 +23,18 @@ fetch (alphaUrl)
                 console.log (data);   
 
 const csData = [
-    { id: "d0", date: date0, value: data.data[0].value},
-    { id: "d1", date: date1, value: data.data[1].value},
-    { id: "d2", date: date2, value: data.data[2].value},
-    { id: "d3", date: date3, value: data.data[3].value},
-    { id: "d4", date: date4, value: data.data[4].value},
-    { id: "d5", date: date5, value: data.data[5].value},
-    { id: "d6", date: date6, value: data.data[6].value},
-    { id: "d7", date: date7, value: data.data[7].value},
-    { id: "d8", date: date8, value: data.data[8].value},    
-    { id: "d9", date: date9, value: data.data[9].value},
-    { id: "d10", date:date10, value: data.data[10].value},
-    { id: "d11", date:date11, value: data.data[11].value},
+    { id: "d0", date: date11, value: data.data[11].value},
+    { id: "d1", date: date10, value: data.data[10].value},
+    { id: "d2", date: date9, value: data.data[9].value},
+    { id: "d3", date: date8, value: data.data[8].value},
+    { id: "d4", date: date7, value: data.data[7].value},
+    { id: "d5", date: date6, value: data.data[6].value},
+    { id: "d6", date: date5, value: data.data[5].value},
+    { id: "d7", date: date4, value: data.data[4].value},
+    { id: "d8", date: date3, value: data.data[3].value},    
+    { id: "d9", date: date2, value: data.data[2].value},
+    { id: "d10", date:date1, value: data.data[1].value},
+    { id: "d11", date:date0, value: data.data[0].value},
   ];
   
   
