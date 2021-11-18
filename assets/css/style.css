@@ -40,11 +40,6 @@ header h1 {
     padding: 1rem;
   }
 
-  .chart {
-    margin: 0  2rem;
-  }
- 
-
   .bar {
     fill: #000;
   }
