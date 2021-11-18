@@ -1,120 +1,19 @@
 
 
-
-// let CScontainerEl = document.querySelector('#cscontainer')
-
-// let alphaUrl = 'https://www.alphavantage.co/query?function=CONSUMER_SENTIMENT&symbol=spy&interval=15min&apikey=EDF52AZBF2DHJGYX' 
-// fetch (alphaUrl)
-//     .then(function(response){
-//         if(response.ok) {
-//             response.json().then(function(data){
-//                 console.log (data);
-//                 displayCS(data)
-//             })
-//         }
-//     })
-// let CStitleEL = document.createElement('h3')
-// CScontainerEl.appendChild(CStitleEL)
-// let displayCS = function(data) {
-//     for (let i = 0; i < 12; i++) {
-        
-//         let CSlistEl = document.createElement('ul');
-//         let CSdateEl = document.createElement('li');
-//         let CSreadEL = document.createElement('li');
-        
-//         CScontainerEl.appendChild(CSlistEl);
-//         CSlistEl.appendChild(CSdateEl);
-//         CSlistEl.appendChild(CSreadEL);
-//         CStitleEL.textContent = data.name
-//         CSdateEl.textContent = data.data[i].date;
-//         CSreadEL.textContent = data.data[i].value
-       
-//     }
-// }
-
-// let retailContainerEl = document.querySelector('#retailcontainer')
-
-// let alpha1Url = 'https://www.alphavantage.co/query?function=RETAIL_SALES&symbol=spy&interval=15min&apikey=EDF52AZBF2DHJGYX' 
-// fetch (alpha1Url)
-//     .then(function(response){
-//         if(response.ok) {
-//             response.json().then(function(data){
-//                 console.log (data);
-//                 displayretail(data)
-//             })
-//         }
-//     })
-
-// let retailTitleEL = document.createElement('h3')
-// retailContainerEl.appendChild(retailTitleEL)
-// let displayretail = function(data) {
-//     for (let i = 0; i < 12; i++) {
-//         let retailListEl = document.createElement('ul');
-//         let retailDateEl = document.createElement('li');
-//         let retailReadEL = document.createElement('li');
-//         retailContainerEl.appendChild(retailListEl);
-//         retailListEl.appendChild(retailDateEl);
-//         retailListEl.appendChild(retailReadEL);
-//         retailTitleEL.textContent = data.name
-//         retailDateEl.textContent = data.data[i].date;
-//         retailReadEL.textContent = '$' +data.data[i].value + " Million"
-       
-//     }
-// }
-
-// let CPIcontainerEl = document.querySelector('#CPIcontainer')
-
-// let alpha2Url = 'https://www.alphavantage.co/query?function=CPI&interval=monthly&symbol=spy&interval=15min&apikey=EDF52AZBF2DHJGYX' 
-// fetch (alpha2Url)
-//     .then(function(response){
-//         if(response.ok) {
-//             response.json().then(function(data){
-//                 console.log (data);
-//                 displayCPI(data)
-//             })
-//         }
-//     })
-
-// let CPItitleEL = document.createElement('h3')
-// CPIcontainerEl.appendChild(CPItitleEL)
-// let displayCPI = function(data) {
-//     for (let i = 0; i < 12; i++) {
-//         let CPIlistEl = document.createElement('ul');
-//         let CPIdateEl = document.createElement('li');
-//         let CPIreadEL = document.createElement('li');
-//         CPIcontainerEl.appendChild(CPIlistEl);
-//         CPIlistEl.appendChild(CPIdateEl);
-//         CPIlistEl.appendChild(CPIreadEL);
-//         CPItitleEL.textContent = data.name;
-//         CPIdateEl.textContent = data.data[i].date;
-//         CPIreadEL.textContent = data.data[i].value
-       
-//     }
-// }
-
-// function responsivefy(svg) {
-    
-//     var container = d3.select(svg.node().parentNode),
-//         width = parseInt(svg.style("width")),
-//         height = parseInt(svg.style("height")),
-//         aspect = width / height;
-
-    
-//     svg.attr("viewBox", "0 0 " + width + " " + height)
-//         .attr("perserveAspectRatio", "xMinYMid")
-//         .call(resize);
-
-//     d3.select(window).on("resize." + container.attr("id"), resize);
-
-   
-//     function resize() {
-//         var targetWidth = parseInt(container.style("width"));
-//         svg.attr("width", targetWidth);
-//         svg.attr("height", Math.round(targetWidth / aspect));
-//     }
-// }
-
 // chart start
+
+let date0 = moment().subtract(2, "month").format("MMM-YY");
+let date1 = moment().subtract(3, "month").format("MMM-YY");
+let date2 = moment().subtract(4, "month").format("MMM-YY");
+let date3 = moment().subtract(5, "month").format("MMM-YY");
+let date4 = moment().subtract(6, "month").format("MMM-YY");
+let date5 = moment().subtract(7, "month").format("MMM-YY");
+let date6 = moment().subtract(8, "month").format("MMM-YY");
+let date7 = moment().subtract(9, "month").format("MMM-YY");
+let date8 = moment().subtract(10, "month").format("MMM-YY");
+let date9 = moment().subtract(11, "month").format("MMM-YY");
+let date10 = moment().subtract(12, "month").format("MMM-YY");
+let date11 = moment().subtract(13, "month").format("MMM-YY");
 
 let alphaUrl = 'https://www.alphavantage.co/query?function=CONSUMER_SENTIMENT&symbol=spy&interval=15min&apikey=EDF52AZBF2DHJGYX' 
 fetch (alphaUrl)
@@ -124,24 +23,24 @@ fetch (alphaUrl)
                 console.log (data);   
 
 const csData = [
-    { id: 'd0', date: data.data[0].date.substr(5, 2), value: data.data[0].value},
-    { id: 'd1', date: data.data[1].date.substr(5, 2), value: data.data[1].value},
-    { id: 'd2', date: data.data[2].date.substr(5, 2), value: data.data[2].value},
-    { id: 'd3', date: data.data[3].date.substr(5, 2), value: data.data[3].value},
-    { id: 'd4', date: data.data[4].date.substr(5, 2), value: data.data[4].value},
-    { id: "d5", date: data.data[5].date.substr(5, 2), value: data.data[5].value},
-    { id: "d6", date: data.data[6].date.substr(5, 2), value: data.data[6].value},
-    { id: "d7", date: data.data[7].date.substr(5, 2), value: data.data[7].value},
-    { id: "d8", date: data.data[8].date.substr(5, 2), value: data.data[8].value},    
-    { id: "d9", date: data.data[9].date.substr(5, 2), value: data.data[9].value},
-    { id: "d10", date: data.data[10].date.substr(5, 2), value: data.data[10].value},
-    { id: "d11", date: data.data[11].date.substr(5, 2), value: data.data[11].value},
+    { id: "d0", date: date0, value: data.data[0].value},
+    { id: "d1", date: date1, value: data.data[1].value},
+    { id: "d2", date: date2, value: data.data[2].value},
+    { id: "d3", date: date3, value: data.data[3].value},
+    { id: "d4", date: date4, value: data.data[4].value},
+    { id: "d5", date: date5, value: data.data[5].value},
+    { id: "d6", date: date6, value: data.data[6].value},
+    { id: "d7", date: date7, value: data.data[7].value},
+    { id: "d8", date: date8, value: data.data[8].value},    
+    { id: "d9", date: date9, value: data.data[9].value},
+    { id: "d10", date:date10, value: data.data[10].value},
+    { id: "d11", date:date11, value: data.data[11].value},
   ];
   
   
   
   // margins for bottom label
-  const margins = {top: 20, bottom: 10};
+  const margins = {top: 20, bottom:37};
   const chartWidth = 800;
   const chartHeight = 600 - margins.top - margins.bottom;
   
@@ -151,11 +50,13 @@ const csData = [
   
   
   const chartContainer = d3
-    .select('.chart')
-    .append('svg')
-    .attr('width', chartWidth)
-    .attr('height', chartHeight + margins.top + margins.bottom)
-    // .call(responsivefy);
+    .select(".chart")
+    .append("svg")
+    // this allows the chart to sesize according to screen size
+    .attr("viewBox", `0 0 800 600`)
+    // .attr("width", chartWidth)
+    // .attr("height", chartHeight + margins.top + margins.bottom)
+    
     
   
 
@@ -169,40 +70,44 @@ const csData = [
   const chart = chartContainer.append('g');
   // axis bottom puts the date labels below the axis not on the bottom of the screen
   chart
-  .append('g')
+  .append("g")
   // tick size outer removes tick on edge of labels
   .call(d3.axisBottom(x).tickSizeOuter(0))
-  .attr('transform', `translate(0, ${chartHeight})`)
-  .attr('color', '#000')
-  .style("font", "15px times");
+  .attr("transform", `translate(0, ${chartHeight})`)
+  .selectAll("text")
+  .attr("color", "#000")
+  .style("font", "15px times")
+  .style("text-anchor", "end")
+  .attr("transform", "rotate(-65)" );;
   
   chart
-    .selectAll('.bar')
+    .selectAll(".bar")
     .data(csData)
     .enter()
-    // 'rect' created a rectangle in the svg element
-    .append('rect')
-    .classed('bar', true)
+    // "rect" created a rectangle in the svg element
+    .append("rect")
+    .classed("bar", true)
     // bandwidth takes account of how many bars we have and makes them fit into the graph taking acount of the padding
-    .attr('width', x.bandwidth())
+    .attr("width", x.bandwidth())
     // this caculates the position along the y axis for this element
-    .attr('height', (data) => chartHeight - y(data.value))
-    .attr('x', (data) => x(data.date))
-    .attr('y', (data) => y(data.value));
+    .attr("height", (data) => chartHeight - y(data.value))
+    .attr("x", (data) => x(data.date))
+    .attr("y", (data) => y(data.value));
     
   
   chart
-  .selectAll('.label')
+  .selectAll(".label")
   .data(csData)
   .enter()
-  .append('text')
+  .append("text")
   .text(data => data.value)
   // positioning the value
-  .attr('x', data => x(data.date) + x.bandwidth() / 2)
-  .attr('y', data => y(data.value) - 20)
+  .attr("x", data => x(data.date) + x.bandwidth() / 2)
+  .attr("y", data => y(data.value) - 20)
   // this centers value text in the middle
-  .attr('text-anchor', 'middle')
-  .classed('label', true);
+  .attr("text-anchor", "middle")
+  .attr()
+//   .classed("label", true);
 
 })
 }
