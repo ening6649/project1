@@ -124,7 +124,7 @@ let tickerInputEl = document.querySelector('#ticker')
 let formEl = document.querySelector('#search-form')
 let searchHistoryEl = document.querySelector('#search-history')
 
-let FMPUrl = 'https://financialmodelingprep.com/api/v3/gainers?apikey=7a878c27bf0e17dc1eea0a749c7d6bc3' 
+let FMPUrl = 'https://financialmodelingprep.com/api/v3/gainers?apikey=72e950cfc67af845b9287ee5c40111b5' 
 fetch (FMPUrl)
     .then(function(response){
         if(response.ok) {
@@ -181,7 +181,7 @@ let displayCPI = function(data) {
 }
 
 let CScontainerEl = document.querySelector('#cscontainer')
-let FMP1Url = 'https://financialmodelingprep.com/api/v3/actives?apikey=7a878c27bf0e17dc1eea0a749c7d6bc3'
+let FMP1Url = 'https://financialmodelingprep.com/api/v3/actives?apikey=72e950cfc67af845b9287ee5c40111b5'
 fetch (FMP1Url)
     .then(function(response){
         if(response.ok) {
