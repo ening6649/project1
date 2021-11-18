@@ -421,6 +421,12 @@ let searchDisplay = function (data) {
 }
 
 
+// history styleing 
+$(function(){
+    $("#search-history").find("p").filter(":even").css({"background-color":"rgb(204, 201, 201)","color":"black"});
+    $("#search-history").find("p").filter(":odd").css({"background-color":"black","color":"white"});
+});
+
 
 
 // searchDisplay(savedTickerArr[0]);

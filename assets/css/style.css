@@ -14,7 +14,7 @@
 header {
     background-color: #000;
     text-align: center;
-    /* background-image: url("./assets/img/footer-bg.jpg"); */
+    background-image: url("./assets/img/footer-bg.jpg");
 }
 
 header h1 {
@@ -22,7 +22,6 @@ header h1 {
 }
 /* search history */
 .save-search {
-  background-color: lightgrey;
   text-align: center;
   border-radius: 6px;
 }
